@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#03a6f3">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+  </script>
+</head>
+<style>@keyframes loading5{
+    0%{
+        width: 0px;
+        left: 0px;
+        right: auto;
+    }
+    50%{
+        width: 100%;
+        left: 0px;
+        right: auto;
+    }
+    51%{
+        width: 100%;
+        left: auto;
+        right: 0px;
+    }
+    100%{
+        width: 0%;
+        left: auto;
+        right: 0px;
+    }
+
+}
+.loading-5{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 0%;
+    height: 100%;
+    background:rgba(0, 0, 0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: loading5 1s ease infinite;
+
+}
+button:active{
+    transform: scale(.85);
+}
+button.activeloading .loading{
+    visibility: visible;
+    opacity: 1;
+}
+button .loading{
+    opacity: 0;
+    visibility: hidden;
+}
+button{
+    padding: 5px 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0px;
+    background: transparent;
+    position: relative;
+    margin: 20px;
+    transition: all .25s ease;
+    background:#000;
+    border-radius: 28px;
+    color: rgb(251, 101, 0);
+    overflow: hidden;
+
+}
+   
+   .container .row .item img{
+        width: 200px;
+        height: 255px;
+    }
+    #b2{
+display: none;
+    }
+    #c1{
+        background-image: url(request.png);
+        background-position: center center;
+        background-size: cover;
+    }
+    .request{
+        color: rgb(251, 101, 0);
+       text-decoration: none;
+
+    }
+    .request:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    .btn{
+        scroll-behavior: smooth;
+    }
+
+    @media only screen and (max-width: 800px){
+header .main-menu .form-inline {
+    max-width: 206px;
+}}
+@media only screen and (max-width: 400px){
+      button{
+        padding: 5px 25px;
+        font-size: 1.5rem;
+      }
+    }
+</style>
+
+<body>
+    <header id="a">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a href="#" class="web-url">www.books.vfindfit.com</a></div>
+                    <!-- <div class="col-md-6">
+                        <h5>Free Shipping Over $99 + 3 Free Samples With Every Order</h5></div>
+                    <div class="col-md-3">
+                        <span class="ph-number">Call : 800 1234 5678</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" id="searchbar" type="search"  onkeyup="search_animal()" placeholder="Search for a great book " aria-label="Search" name="search">
+                        <span class="fa fa-search"></span>
+                       
+                    </form>
+                    <button class="r" onclick="requ()">
+                        <a href="https://forms.gle/oxTphXaQCLKPgeKX6" class="request" id="req">Request For Book</a>
+                      <div class="loading-5 loading"></div>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="navbar-item active">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <!-- <li class="navbar-item">
+                                <a href="shop.html" class="nav-link">Shop</a>
+                            </li> -->
+                            <li class="navbar-item">
+                                <a href="How%20.html" class="nav-link">Got Less Time?</a>
+                            </li>
+                             <li class="navbar-item">
+                                <a href="readerscorner.html" class="nav-link">Readers Corner</a>
+                            </li> 
+                            <!-- <li class="navbar-item">
+                                <a href="login.html" class="nav-link">Login</a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="cart my-2 my-lg-0">
+                            <span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                            <span class="quntity">3</span>
+                        </div> -->
+                       
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="jumbo">
+    <section class="slider">
+        <div class="container">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+               <!-- <div class="item">
+                    <div class="slide">
+                        <img src="images/slide1.jpg" alt="slide1">
+                        <div class="content">
+                            <div class="title">
+                                <h3>welcome to bookstore</h3>
+                                <h5>Discover the best books online with us</h5>
+                                <a href="#" class="btn">start Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="item">
+                    <div class="slide">
+                        <img src="images/slide2.jpg" alt="slide1">
+                        <div class="content">
+                            <div class="title">
+                                <h3>welcome to the bookstore</h3>
+                                <h5>Discover the best books online with us</h5>
+
+                                <a href="#b1" class="btn">start Reading</a>
+                              <br/> vFindfit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="item">
+                    <div class="slide">
+                        <img src="images/slide3.jpg" alt="slide1">
+                        <div class="content">
+                            <div class="title">
+                                <h3>welcome to bookstore</h3>
+                                <h5>Discover the best books online with us</h5>
+                                <a href="#" class="btn">start Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="slide">
+                        <img src="images/slide4.jpg" alt="slide1">
+                        <div class="content">
+                            <div class="title">
+                                <h3>welcome to bookstore</h3>
+                                <h5>Discover the best books online with us</h5>
+                                <a href="#" class="btn">start Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+    
+    <button class="s" onclick="requ()">
+        <a href="https://forms.gle/oxTphXaQCLKPgeKX6" class="request" id="req">Request For Book</a>
+      <div class="loading-5 loading"></div>
+    </button>
+    <section class="recomended-sec">
+        <div class="container">
+            <div class="title">
+                <h2><br> highly recommendes books</h2>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81l3rZK4lnL.jpg" alt="img">
+                        <h3>ikigai</h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1F7TQvQt7E9Cofs0jioQ0OSLrFkawFC4G/view?usp=sharing">Read Now</a></h6>
+                        <div class="hover">
+                            <a href="https://drive.google.com/file/d/1F7TQvQt7E9Cofs0jioQ0OSLrFkawFC4G/view?usp=sharing">
+                            <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="item">
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497372787l/35428340._SY475_.jpg" alt="img">
+                        <h3>Ancient Science Of Mantras</h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1jMdzRy6zrjJvSWBjfYOD93B6mzPdqfO5/view?usp=sharing">Read Now</a></h6>
+                        <!-- <span class="sale">Sale !</span> -->
+                        <div class="hover">
+                            <a href="https://drive.google.com/file/d/1jMdzRy6zrjJvSWBjfYOD93B6mzPdqfO5/view?usp=sharing">
+                            <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="item">
+                        <img src=" https://images-na.ssl-images-amazon.com/images/I/41-jsI5OBsL._SX327_BO1,204,203,200_.jpg" alt="img">
+                        <h3>The Biggest Bluff</h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/15jM9vWNHjfhdOgh56TpDLfXCBU7vA06e/view?usp=sharing">Read Now</a></h6>
+                        <div class="hover">
+                            <a href="https://drive.google.com/file/d/15jM9vWNHjfhdOgh56TpDLfXCBU7vA06e/view?usp=sharing">
+                            <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51O0YgvNBpL._SX331_BO1,204,203,200_.jpg" alt="img">
+                        <h3>A Breif History Of Time</h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/10TAPkV5Mvc-v6kwbj9CuBpudUDQRU6C5/view?usp=sharFree">Read Now</a></h6>
+                        <div class="hover">
+                            <a href="https://drive.google.com/file/d/10TAPkV5Mvc-v6kwbj9CuBpudUDQRU6C5/view?usp=sharFree">
+                            <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+      <div><img src="images/how%20to%20start.png" alt="" width="100%" height="100%" style="vertical-align:middle">
+    
+       </div>
+    
+    
+    <section class="about-sec">
+        <div class="about-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/500d7112e4b0a738c57eaa53/1543937626618-LDIG7FU8AQAAH6XB1VMU/ke17ZwdGBToddI8pDm48kGVAqUhYrGdhEGudzFls7K1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI3qfRO8hJhbvfRCvNhjqrGe-PfXgVTpsvEoluIBTyvM0/typewriter.gif" alt="about">
+
+           <!-- <figure style="background:url(./images/about-img.jpg)no-repeat;"></figure>-->
+        </div>
+        <div class="about-content">
+            <h2>About this bookstore ,</h2>
+            <p>It all started with a simple book. It was Harper Lee’s <b>“To Kill the Mockingbird”</b>, 
+                after reading which we decided that we need to help people get acquainted with gems of literature. 
+             Every single time a new book enlightened us and we grasped new knowledge and experience from it.
+              Paolo Coelho's <b>“Alchemist”</b>, Leo Tolstoy’s <b>“War and Peace”</b>. and Neil Gaiman’s <b>“American Gods”</b> - 
+              all these books were so different and unique! All these books taught us a lesson, that would undoubtedly 
+              be useful for the rest of our lives. So we wanted to help people, too, understand the importance of books.  </p>
+            <p>We wanted to become the intermediary in the link between the legendary writers and readers. 
+                Who are those great writers? The great writers are those, who build bridges to people we might
+                 otherwise have dismissed as strange or unsympathetic. They cut through to the common 
+                 core of experience.</p>
+            
+            <p>By selection and emphasis, they reveal the important things we share. 
+                They show us where to look. They help us to feel. So, the idea of establishing 
+                a bookstore arose! A place where people could find the book that's close to their heart.
+                 A separate island, isolated from the world, which would take them to new places! 
+                 So, what are you waiting for start your journey with <b>Books store of vFindfit,</b></p>
+            <!-- <div class="btn-sec">
+                <a href="shop.html" class="btn yellow">shop books</a>
+                <a href="login.html" class="btn black">subscriptions</a>
+            </div> -->
+        </div>
+    </section>
+    </div>
+    <section class="recent-book-sec">
+        <div class="container">
+            <div class="title">
+                <h2 id="b1">Newly added catelog</h2>
+                <h2 id="b2">Books you Search for...</h2>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r1.jpg" alt="img"> -->
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81l3rZK4lnL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1F7TQvQt7E9Cofs0jioQ0OSLrFkawFC4G/view?usp=sharing" class="vfindfitbook">ikigai</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1F7TQvQt7E9Cofs0jioQ0OSLrFkawFC4G/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r2.jpg" alt="img"> -->
+                        <img src=" https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497372787l/35428340._SY475_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1jMdzRy6zrjJvSWBjfYOD93B6mzPdqfO5/view?usp=sharing" class="vfindfitbook">Ancient Science Of Mantras</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1jMdzRy6zrjJvSWBjfYOD93B6mzPdqfO5/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src=" https://images-na.ssl-images-amazon.com/images/I/41-jsI5OBsL._SX327_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/15jM9vWNHjfhdOgh56TpDLfXCBU7vA06e/view?usp=sharing" class="vfindfitbook">The Biggest Bluff</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/15jM9vWNHjfhdOgh56TpDLfXCBU7vA06e/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r4.jpg" alt="img"> -->
+                        <img src="https://kbimages1-a.akamaihd.net/05d83a2c-b5e1-41df-8ac6-80d9da94d16c/353/569/90/False/21-days-of-effective-communication-everyday-habits-and-exercises-to-improve-your-communication-skills-and-social-intelligence.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1jNzqLF62Sz4tIGeeHDKSGf9pDj8nt_Ae/view?usp=sharing" class="vfindfitbook">21 days of effective communication </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1jNzqLF62Sz4tIGeeHDKSGf9pDj8nt_Ae/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r5.jpg" alt="img"> -->
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51O0YgvNBpL._SX331_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/10TAPkV5Mvc-v6kwbj9CuBpudUDQRU6C5/view?usp=sharing" class="vfindfitbook">A Breif History Of Time  </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/10TAPkV5Mvc-v6kwbj9CuBpudUDQRU6C5/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r1.jpg" alt="img"> -->
+                        <img src="https://rukminim1.flixcart.com/image/352/352/k2urhjk0/book/7/9/8/dear-stranger-i-know-how-you-feel-original-imafm44bxc8nbryc.jpeg?q=70" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1vKqOj4hKmkIEQSRLkJl9hTUrcZI5QKG9/view?usp=sharing" class="vfindfitbook">Stranger I Know How You Feel .</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1vKqOj4hKmkIEQSRLkJl9hTUrcZI5QKG9/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r2.jpg" alt="img"> -->
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391109084l/20657434.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1T-EmINmbpAbPo3lN6IvK_EV0GaCyMMOc/view?usp=nosharing" class="vfindfitbook">The Hard Thing About Hard Things </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1T-EmINmbpAbPo3lN6IvK_EV0GaCyMMOc/view?usp=nosharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r3.jpg" alt="img"> -->
+                        <img src="https://m.media-amazon.com/images/I/51Xur1KZWKL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1TF_5YohR4iA7DQpn3dLd4wwQLgPebyll/view?usp=sharing" class="vfindfitbook">The Intelligent Investor </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1TF_5YohR4iA7DQpn3dLd4wwQLgPebyll/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <!-- <img src="images/r4.jpg" alt="img"> -->
+                        <img src="https://m.media-amazon.com/images/I/51eRBJgA9hL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1x7Ar8AnXlelLSIySu2dsdIJW5zzEq_d0/view?usp=sharing" class="vfindfitbook">Eat That Frog! 21 Great Ways to Stop Procrastinating</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1x7Ar8AnXlelLSIySu2dsdIJW5zzEq_d0/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51j5N3jUwlL._SY445_QL70_ML2_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1kJ55D37n-xJr3xDQIXCejyHNKYaR9er1/view?usp=sharing" class="vfindfitbook">Master Your Time, Master Your Life </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1kJ55D37n-xJr3xDQIXCejyHNKYaR9er1/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51hpw4PUtHL._SX324_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1JawWyz6mwLZQVo2SkHXgQdhjcOPurAU2/view?usp=sharing" class="vfindfitbook">Never Split the Difference</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1JawWyz6mwLZQVo2SkHXgQdhjcOPurAU2/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51StUBlb0rL._SX302_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1maZZGu46eMd2E0l06PPvyDrMMykFb43U/view?usp=sharing" class="vfindfitbook">How to stop worrying and start living</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1maZZGu46eMd2E0l06PPvyDrMMykFb43U/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51jR0s1nllL._SX310_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1ApH4Brrj3fMoD4N8Jv_RQdjAt6BzFVNN/view?usp=sharing" class="vfindfitbook">Who Says You Can't? You Do</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1ApH4Brrj3fMoD4N8Jv_RQdjAt6BzFVNN/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41wI53OEpCL._SX332_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1Yp0keD8Gu9QlS4cpKHwD5O6mQsTfW1BQ/view?usp=sharing" class="vfindfitbook">Thinking, Fast and Slow</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1Yp0keD8Gu9QlS4cpKHwD5O6mQsTfW1BQ/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41YOJ0fL7GL._SX322_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1Fn4CjSTCaPwUX7sLWov9LvVta4fre6GA/view?usp=sharing" class="vfindfitbook">The Modern Break-Up</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1Fn4CjSTCaPwUX7sLWov9LvVta4fre6GA/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/719ovgJafDL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1bzxFsCGJ6zn0l7_MunOlwd6zsvzfhkra/view?usp=sharing" class="vfindfitbook">The Magic of Thinking Big</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1bzxFsCGJ6zn0l7_MunOlwd6zsvzfhkra/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/418Mmq-lMLL._SX316_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1zL7PE321QdiI9A20XtrH6kbVNquoKNub/view?usp=sharing" class="vfindfitbook">Deep Work Rules</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1zL7PE321QdiI9A20XtrH6kbVNquoKNub/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51F4z2j1kyL._SX379_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/19g4W79DZC1LNAo4e_pMuBmzPFTCEd21a/view?usp=sharing" class="vfindfitbook">7 secrets of Godess</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/19g4W79DZC1LNAo4e_pMuBmzPFTCEd21a/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51tw6UjHpDL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1P27er8fIVUpAueKJcCSUx1fTebA-Zl03/view?usp=sharing" class="vfindfitbook">Elon Musk</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1P27er8fIVUpAueKJcCSUx1fTebA-Zl03/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51Mlx+QkN5L._SX324_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1_fxZfD0omdwg_5CfF3HDEqKFfHCvJJIV/view?usp=sharing" class="vfindfitbook">Games People Play</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1_fxZfD0omdwg_5CfF3HDEqKFfHCvJJIV/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51DhvV6a3mL._SX321_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1ofeLB2njirjJOcn1w_arhL7ddw-abNWC/view?usp=sharing" class="vfindfitbook">Factfullness - Ten Reasons We Are Wrong About </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1ofeLB2njirjJOcn1w_arhL7ddw-abNWC/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41lj+PPEhBL._SX331_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1OyLQPVhUQ6uJNK8Au4H3UVq8YjyVIdnK/view?usp=sharing" class="vfindfitbook">Founders at work </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1OyLQPVhUQ6uJNK8Au4H3UVq8YjyVIdnK/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51lfosuz2QL._SX312_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/18kb1zcCqzsXY9ConbYS8T3cIfKb1BSd-/view?usp=sharing" class="vfindfitbook">From Failure to success </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/18kb1zcCqzsXY9ConbYS8T3cIfKb1BSd-/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71yH0kYhRQL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1Bquku0CNrsjY9iOxa7wLrvMBpHDpgU-3/view?usp=sharing" class="vfindfitbook">The One Thing </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1Bquku0CNrsjY9iOxa7wLrvMBpHDpgU-3/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/5191IB3YrGL._SY445_QL70_ML2_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1LudXUO0ncSatWVlDNwl7EwegzMC_Cldu/view?usp=sharing" class="vfindfitbook">The Ice Dragon </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1LudXUO0ncSatWVlDNwl7EwegzMC_Cldu/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71jFzS5DFdL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1GiyM_ocEN5O9riZlsLgClxXv44j0pH5G/view?usp=sharing" class="vfindfitbook">A Revolutionary Approach To Success</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1GiyM_ocEN5O9riZlsLgClxXv44j0pH5G/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41jVx9H8-QL._SX322_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1td0Un-XbS4wBe6IsHfRONQ4RTUidZA-s/view?usp=sharing" class="vfindfitbook">Sell Or Be Sold </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1td0Un-XbS4wBe6IsHfRONQ4RTUidZA-s/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1ht-X5UK0x8QiBXf0G_RFYyKVHesjTGAH/view?usp=sharing" class="vfindfitbook">To Kill A Mocking Bird</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1ht-X5UK0x8QiBXf0G_RFYyKVHesjTGAH/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61e27dewafL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/17WROuEod_yYmqEhlaAUIV-gXvsDdspQl/view?usp=sharing" class="vfindfitbook">How To Win Friends And Influence People </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/17WROuEod_yYmqEhlaAUIV-gXvsDdspQl/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/713aAMWFJ4L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1fTrx6qnmxQx7SrpJAwZkSyN1ZezNa5Ay/view?usp=sharing" class="vfindfitbook">How I Raised Myself From Failure To Success In Selling </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1fTrx6qnmxQx7SrpJAwZkSyN1ZezNa5Ay/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://kbimages1-a.akamaihd.net/b86ef33c-8f27-48fa-a136-f80cab28b736/1200/1200/False/truth-vibrations-david-icke-s-journey-from-tv-celebrity-to-world-visionary.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1AolsfvlQXL7oTqNWvPdOIFxVK9PMZbBu/view?usp=sharing" class="vfindfitbook">Truth Vibrations </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1AolsfvlQXL7oTqNWvPdOIFxVK9PMZbBu/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51hcpuzLGdL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1h6zTXy3zKR0JMnMQsAQL7li_--nr-vd3/view?usp=sharing" class="vfindfitbook">India’s most Fearless </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1h6zTXy3zKR0JMnMQsAQL7li_--nr-vd3/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51Tlm0GZTXL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1h6zTXy3zKR0JMnMQsAQL7li_--nr-vd3/view?usp=sharing" class="vfindfitbook">Atomic Habits </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1h6zTXy3zKR0JMnMQsAQL7li_--nr-vd3/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/4177Wpz78VL._SX322_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1UtnuZj3VP65NiWfxAyUhT4WRPWh3Sg1Z/view?usp=sharing" class="vfindfitbook">How Mighty Fall And some Company Never Give In</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1UtnuZj3VP65NiWfxAyUhT4WRPWh3Sg1Z/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71NApfLNYjL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1JOxfaB27PEeda0zo1Q3IuK-GN4-pSUsl/view?usp=sharing" class="vfindfitbook">Learn Anything Faster </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1JOxfaB27PEeda0zo1Q3IuK-GN4-pSUsl/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81qT0z5VxNL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1093zUkZe9BPMqnMsOZvjHwf0thliIVia/view?usp=sharing" class="vfindfitbook">Fault In Our Stars </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1093zUkZe9BPMqnMsOZvjHwf0thliIVia/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51QTTApN-XL._SX324_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1wPMryAcl9XhIrkCMn0VhvSBMXXSEEZZ3/view?usp=sharing" class="vfindfitbook">The Power of your subconscious mind</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1wPMryAcl9XhIrkCMn0VhvSBMXXSEEZZ3/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://media.wiley.com/product_data/coverImage300/35/04717387/0471738735.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/15D-bHUtjAsi1uzItJGZzZ07NcTJQZlqj/view?usp=sharing" class="vfindfitbook">Just One Thing </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/15D-bHUtjAsi1uzItJGZzZ07NcTJQZlqj/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81SiQQfAW+L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1YfWH2SzI6bS9Xn6CjjNE6BIJIvqPw1Ly/view?usp=sharing" class="vfindfitbook">I Can’t Make This Up</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1YfWH2SzI6bS9Xn6CjjNE6BIJIvqPw1Ly/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41vY+MESvBL._SX329_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1WuZ8BK_HnYmkU2Cq4t3LWwjnV742g8z6/view?usp=sharing" class="vfindfitbook">Tim cook</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1WuZ8BK_HnYmkU2Cq4t3LWwjnV742g8z6/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51kmI3AdGnL._SX301_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/18KClv3pGdFpAAqfoM2PpWc72iNhCx_vy/view?usp=sharing" class="vfindfitbook">Out Of The Shadow </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/18KClv3pGdFpAAqfoM2PpWc72iNhCx_vy/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61MLInWDeJL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1RHTjste2yQfjO4-PHzxDDd00WJu2E-SB/view?usp=sharing" class="vfindfitbook">How To Talk To Anyone</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1RHTjste2yQfjO4-PHzxDDd00WJu2E-SB/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/411oMyaX7vL._SY445_QL70_ML2_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1xlWJYQ9gzVRihAy6lMwDmHNeM2UMP7Ow/view?usp=sharing" class="vfindfitbook">Let Your Life Speak </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1xlWJYQ9gzVRihAy6lMwDmHNeM2UMP7Ow/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61x7PHVi3pL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1J0VOztRbc9AkZK91FZP-gd6BoI9YKnH8/view?usp=sharing" class="vfindfitbook">Man’s Search For Meaning </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1J0VOztRbc9AkZK91FZP-gd6BoI9YKnH8/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41TFXNB0Z3L._SX323_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1qrjw1D9tRt1hMa5NNx22069rqaZ4tmzp/view?usp=sharing" class="vfindfitbook">The Idea Of The Brain </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1qrjw1D9tRt1hMa5NNx22069rqaZ4tmzp/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/8174kfNgcwL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/19dYqJ-0dbIz3eLnYKQsgAqiI_Ud2o87D/view?usp=sharing" class="vfindfitbook">Why We Sleep</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/19dYqJ-0dbIz3eLnYKQsgAqiI_Ud2o87D/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1392712593l/20838660.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1JqiR8XWU0rQe7tMTAxLa9pyxyx2X19gG/view?usp=sharing" class="vfindfitbook"> 30 days of Mega Living </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1JqiR8XWU0rQe7tMTAxLa9pyxyx2X19gG/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81RfW9mFkEL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1RfGyBT6u80ksM8XID4x-AvrVrqTQ8b8M/view?usp=sharing" class="vfindfitbook">Men Are From Mars And Women Are From Venus </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1RfGyBT6u80ksM8XID4x-AvrVrqTQ8b8M/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91w70Ax2LhL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1TJPpooWcZRA8pdSszG2d42oUyWJ1EGmd/view?usp=sharing" class="vfindfitbook">Astro Physics For People In Hurry </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1TJPpooWcZRA8pdSszG2d42oUyWJ1EGmd/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41CJpYdqVwL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1tiQmvKaJZQQIHfIw7SWz8FVC3gpjJXnZ/view?usp=sharing" class="vfindfitbook">Pyjama Profit </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1tiQmvKaJZQQIHfIw7SWz8FVC3gpjJXnZ/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41p5oWL3ryL._SX307_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1nG4l2jn4KzTPnSe9c_GeJ4PPOPKhBReF/view?usp=sharing" class="vfindfitbook">Quiet</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1nG4l2jn4KzTPnSe9c_GeJ4PPOPKhBReF/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81Fi8qWVfHL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1zKT3b8OtOx1dZsrZt6imoCTsCM9xCslY/view?usp=sharing" class="vfindfitbook">Our Moon Has Blood Clots  </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1zKT3b8OtOx1dZsrZt6imoCTsCM9xCslY/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51G5tJ9dvKL._SX323_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1CAA8Oyh7hE3GRFzWjJWeQUM-14S2icVn/view?usp=sharing" class="vfindfitbook">Loosing My Virginity </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1CAA8Oyh7hE3GRFzWjJWeQUM-14S2icVn/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/712f-92FOHL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/13vBQAmUmF_kqci-O1AALBuBSyoZBA5nQ/view?usp=sharing" class="vfindfitbook">33 Strategies Of War </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/13vBQAmUmF_kqci-O1AALBuBSyoZBA5nQ/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71951W96oWL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1AdrK9C6kh-MoAGfBEd0216m7JpXrIvYg/view?usp=sharing" class="vfindfitbook">48 Laws Of Power </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1AdrK9C6kh-MoAGfBEd0216m7JpXrIvYg/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91oxKwBs45L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1wYzFz4Dd9BC-VtfRvRPxVK2AOrBQcl3E/view?usp=sharing" class="vfindfitbook">Washington A life </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1wYzFz4Dd9BC-VtfRvRPxVK2AOrBQcl3E/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91QYIVSzVtL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1ItPOYeII2JwCcF64PTZ5j_d-kP1QOEq1/view?usp=sharing" class="vfindfitbook">Inner Engineering Sadguru</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1ItPOYeII2JwCcF64PTZ5j_d-kP1QOEq1/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41JYhXXa+rL._SX328_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1v-tmBq1YB0R5eAxVvHFy5R1-AQGB3h3N/view?usp=sharing" class="vfindfitbook">Hit Refresh </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1v-tmBq1YB0R5eAxVvHFy5R1-AQGB3h3N/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81+1abAhFzL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1NUepNQzsQOyxv9551yilwRS-JY7Yo38J/view?usp=sharing" class="vfindfitbook">The Giving Tree </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1NUepNQzsQOyxv9551yilwRS-JY7Yo38J/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81zHwTa288L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1bI8Wccm3fgVyWTUB444HYj0dxfiZWxL8/view?usp=sharing" class="vfindfitbook">Shiva Triology</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1bI8Wccm3fgVyWTUB444HYj0dxfiZWxL8/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81U3+6n3s1L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1aC58f_HU1ZCqGrSG1NU3XhXEt1TX_8ZA/view?usp=sharing" class="vfindfitbook">The Rudest Book Ever </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1aC58f_HU1ZCqGrSG1NU3XhXEt1TX_8ZA/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71QUhm-AnIL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1eZ0ysf-zqCYu--YAO-sDXj8gyjqZRtmt/view?usp=sharing" class="vfindfitbook">Start With How </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1eZ0ysf-zqCYu--YAO-sDXj8gyjqZRtmt/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61N-1FDy8VL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1PI09RybERprdVNe97Sxe2jev1yHbu_aU/view?usp=sharing" class="vfindfitbook">So Good They Can’t Ignore You .</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1PI09RybERprdVNe97Sxe2jev1yHbu_aU/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51Sbr+6gRHL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1aYerUebQ5HbjF2oqzj4ofrDmmVsShvV9/view?usp=sharing" class="vfindfitbook">The Startup Owner’s Manual </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1aYerUebQ5HbjF2oqzj4ofrDmmVsShvV9/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91ycNzZu1mL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1aYerUebQ5HbjF2oqzj4ofrDmmVsShvV9/view?usp=sharing" class="vfindfitbook">The Catcher In The Rye</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1aYerUebQ5HbjF2oqzj4ofrDmmVsShvV9/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51JwMAlpBFL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1TFePT5N91Tts7k9eX3_rzzQJiv8uP4q6/view?usp=sharing" class="vfindfitbook">The Joys Of Compounding</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1TFePT5N91Tts7k9eX3_rzzQJiv8uP4q6/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61Iz2yy2CKL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1Gkk0iSykI0qdL4coExAORnQx7J2tp_nN/view?usp=sharing" class="vfindfitbook">The monk Who Sold His Ferrari</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1Gkk0iSykI0qdL4coExAORnQx7J2tp_nN/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71AKjthfATL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1kcIlqeBIbgj0GDo2OlE6XwGnAEs4HFbp/view?usp=sharing" class="vfindfitbook">The Psychology Of Selling </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1kcIlqeBIbgj0GDo2OlE6XwGnAEs4HFbp/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51WUU6q7TcL._SX302_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1f8BLJaXGT9tAUH-oatjLVtV4lrg58aoH/view?usp=sharing" class="vfindfitbook">Richest Man In Babyblon</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1f8BLJaXGT9tAUH-oatjLVtV4lrg58aoH/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41BSMHjI39L._SX327_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/10J8v0iFmRT21HNFuqXrn2KXiYfS36vI4/view?usp=sharing" class="vfindfitbook">The Selfish Gene </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/10J8v0iFmRT21HNFuqXrn2KXiYfS36vI4/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71eijJe2ntL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1imdqiIji3WBltZXxwqdUJKEU5kksFMZA/view?usp=sharing" class="vfindfitbook">The 5 AM Club</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1imdqiIji3WBltZXxwqdUJKEU5kksFMZA/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51VBtsx3WEL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1XA6oI5_vPqydU-JZrg_qOGODavOivvhu/view?usp=sharing" class="vfindfitbook">Stephen Hawking Black Holes </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1XA6oI5_vPqydU-JZrg_qOGODavOivvhu/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/17seTR2w62T0Bx3ayRQw6PZNn8SPlzf7z/view?usp=sharing" class="vfindfitbook">The Lean StartUp </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/17seTR2w62T0Bx3ayRQw6PZNn8SPlzf7z/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41WIbflfG2L._SX323_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/11b6TVuHuMFD_oNl5ulrWrdOEjJ0AIn5b/view?usp=sharing" class="vfindfitbook">The Power Of Now </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/11b6TVuHuMFD_oNl5ulrWrdOEjJ0AIn5b/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://m.media-amazon.com/images/I/51Uw5tYiqsL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1K15XUdUqSa1NNkeqjoVdU11g76zTwz5e/view?usp=sharing" class="vfindfitbook">Think And Grow Rich </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1K15XUdUqSa1NNkeqjoVdU11g76zTwz5e/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41rWzmdpuiL._SX327_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1eglhunviz-Yrw_13HnCwiPUHWzusnPJx/view?usp=sharing" class="vfindfitbook">Surrounded By Idots </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1eglhunviz-Yrw_13HnCwiPUHWzusnPJx/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51Tf0Gd187L.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1nQEkYUMN6ahh8aCWLcPLi5srH5KPx5pu/view?usp=sharing" class="vfindfitbook">The Power Of Self Discipline </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1nQEkYUMN6ahh8aCWLcPLi5srH5KPx5pu/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81+GNSGKFlL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1R3MC4WlNSAMXZNVrAxLn0_oI5ilK6HtA/view?usp=sharing" class="vfindfitbook">Indestructible You </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1R3MC4WlNSAMXZNVrAxLn0_oI5ilK6HtA/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41wKll7ITyL._SX362_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1wobmmbNyne5Dww4CimaXAufRJmt25YFx/view?usp=sharing" class="vfindfitbook">Who Will Cry When You Die </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1wobmmbNyne5Dww4CimaXAufRJmt25YFx/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/514d2AAk-CL._SX325_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1lFNxamCWgB4L7Js9RmfZ_x42NwgyPNgN/view?usp=sharing" class="vfindfitbook">The Most Powerful Idea In the World.</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1lFNxamCWgB4L7Js9RmfZ_x42NwgyPNgN/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41yu2qXhXXL._SX324_BO1,204,203,200_.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1QeXGDXv4bOA6MFK9PtkT5-UxoBqLtt4g/view?usp=sharing" class="vfindfitbook">A Breif History Of Human Humankind </a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1QeXGDXv4bOA6MFK9PtkT5-UxoBqLtt4g/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71uAI28kJuL.jpg" alt="img">
+                        <h3><a href="https://drive.google.com/file/d/1QeXGDXv4bOA6MFK9PtkT5-UxoBqLtt4g/view?usp=sharing" class="vfindfitbook">Zero To One</a></h3>
+                        <h6><span class="price">Free</span> / <a href="https://drive.google.com/file/d/1QeXGDXv4bOA6MFK9PtkT5-UxoBqLtt4g/view?usp=sharing">Read Now</a></h6>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item">
+                        <img src="" alt="img">
+                        <h3><a href="#"></a></h3>
+                        <h6><span class="price">Free</span> / <a href="#">Read Now</a></h6>
+                    </div>
+                </div> -->
+            </div>
+            <!-- <div class="btn-sec" id="c" >
+                <img src="message.png" alt="">
+                <a href="#" class="btn gray-btn" id="c1"></a>
+            </div> -->
+        </div>
+    </section>
+    <!-- <section class="features-sec">
+        <div class="container">
+            <ul>
+                <li>
+                    <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                    <h3>SAFE SHOPPING</h3>
+                    <h5>Safe Shopping Guarantee</h5>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                </li>
+                <li>
+                    <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
+                    <h3>30- DAY RETURN</h3>
+                    <h5>Moneyback guarantee</h5>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                </li>
+                <li>
+                    <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                    <h3>24/7 SUPPORT</h3>
+                    <h5>online Consultations</h5>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                </li>
+            </ul>
+        </div>
+    </section> -->
+    <!-- <section class="offers-sec" style="background:url(images/offers.jpg)no-repeat;">
+        <div class="cover"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail">
+                        <h3>Top 50% OFF on Selected</h3>
+                        <h6>We are now offering some good discount 
+                    on selected books go and shop them</h6>
+                        <a href="products.html" class="btn blue-btn">view all books</a>
+                        <span class="icon-point percentage">
+                            <img src="images/precentagae.png" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail">
+                        <h3>Shop $ 500 Above and Get Extra!</h3>
+                        <h6>We are now offering some good discount 
+                    on selected books go and shop them</h6>
+                        <a href="products.html" class="btn blue-btn">view all books</a>
+                        <span class="icon-point amount"><img src="images/amount.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="testimonial-sec">
+        <div class="container">
+            <div id="testimonal" class="owl-carousel owl-theme">
+                <div class="item">
+                    <h3>“The present changes the past. Looking back you do not find what you left behind.”
+                    </h3>
+                                        <div class="box-user">
+                                            <h4 class="author">KIRAN DESAI</h4>
+                                            <span class="book">The Inheritance of Loss</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <h3>And when all the wars are over, a butterfly will still be beautiful.</h3>
+                                        <div class="box-user">
+                                            <h4 class="author">RUSKIN BOND </h4>
+                                            <span class="book"> Scenes from a Writer's Life</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <h3>Think of many things. Never place your happiness in one person's power. Be just to yourself.”
+                    </h3>
+                                        <div class="box-user">
+                                            <h4 class="author">VIKRAM SETH</h4>
+                                            <span class="country">A Suitable Boy </span>
+                                        </div>
+                
+            </div>
+        </div>
+        <div class="left-quote">
+            <img src="images/left-quote.png" alt="quote">
+        </div>
+        <div class="right-quote">
+            <img src="images/right-quote.png" alt="quote">
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- <div class="address">
+                        <h4>Our Address</h4>
+                        <h6>The BookStore Theme, 4th Store
+                        Beside that building, USA</h6>
+                        <h6>Call : 800 1234 5678</h6>
+                        <h6>Email : info@bookstore.com</h6>
+                    </div> -->
+                    <div class="timing">
+                        <h4>Timing</h4>
+                        <h6>Mon - Fri: 7am - 10pm</h6>
+                        <h6>​​Saturday: 8am - 10pm</h6>
+                        <h6>​Sunday: 8am - 11pm</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="readerscorner.html">Readers Corner </a></li>
+                            <!-- <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-conditions.html">Terms</a></li> -->
+                           <!-- <li><a href="products.html">Products</a></li> -->
+                           <li><a href="How%20.html">Got Less Time ? </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="help">
+                       <!-- <h4>Help</h4>-->
+                        <ul>
+                            <!-- <li><a href="">Shipping & Returns</a></li> -->
+                            <!--<li><a href="How%20.html"></a></li>-->
+                            <!-- <li><a href="privacy-policy.html">Privacy</a></li>
+                            <li><a href="faq.html">FAQ’s</a></li> -->
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-5">
+                    <div class="form">
+                        <h3>Quick Contact us</h3>
+                        <h6>We are now offering some good discount 
+                            on selected books go and shop them</h6>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input placeholder="Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea placeholder="Messege"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn black">Alright, Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <h5>(C) 2020. All Rights Reserved. BookStore Wordpress Theme</h5> -->
+                        <h5>(C) 2020. All Rights Reserved. BookStore vFindfit</h5>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <div class="share align-middle">
+                            <span class="fb"><i class="fa fa-facebook-official"></i></span>
+                            <span class="instagram"><i class="fa fa-instagram"></i></span>
+                            <span class="twitter"><i class="fa fa-twitter"></i></span>
+                            <span class="pinterest"><i class="fa fa-pinterest"></i></span>
+                            <span class="google"><i class="fa fa-google-plus"></i></span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="http://listjs.com/no-cdn/list.js"></script> 
+    <script src="http://listjs.com/no-cdn/list.pagination.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+        // JavaScript code 
+    function search_animal() { 
+        let input = document.getElementById('searchbar').value 
+        input=input.toLowerCase(); 
+        let x = document.getElementsByClassName('vfindfitbook'); 
+        let y = document.getElementsByClassName('col-lg-2 col-md-3 col-sm-4'); 
+        let jumbo=document.getElementById('jumbo');  
+        let b1=document.getElementById('b1');  
+        let b2=document.getElementById('b2');
+        let d=document.getElementById('c');
+        let c=0;  
+        for (i = 0; i < x.length; i++) {  
+            if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+                y[i].style.display="none"; 
+                jumbo.style.display="none";
+                b1.style.display="none";
+                b2.style.display="block";
+               
+            } 
+            else { 
+                y[i].style.display="list-item";  
+                jumbo.style.display="block";                
+                b1.style.display="block";                
+                b2.style.display="none";                
+            } 
+        } 
+       
+    }
+        </script> 
+        <!-- <script>
+            $('#searchbar').on('keyup', function(event) { // Fired on 'keyup' event
+    
+            if($('.row').children().length === 0) { // Checking if list is empty
+          
+              $('.btn-sec').css('display', 'block'); // Display the Not Found message
+          
+            } else {
+          
+              $('.btn-sec').css('display', 'none'); // Hide the Not Found message
+          
+            }
+          });
+        </script> -->
+        <!-- <script>
+            const btns=document.querySelectorAll('button')
+            btns.forEach((item) =>{
+                item.addEventListener('click', (evt) =>{
+                    evt.target.classlist.add('activeloading')
+                })
+            })
+        </script> -->
+        <script>
+            function requ(){
+               $(document).find('.r').addClass('activeloading');
+               $(document).find('.s').addClass('activeloading');
+                
+            }
+        </script>
+</body>
+
+</html>
