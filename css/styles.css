@@ -68,9 +68,9 @@ textarea {
   outline: 0; }
 
 .btn {
-  background: #ff9700;
-  opacity: 1;
-  color: #fff;
+    background: #000;
+    opacity: 1;
+    color: #ff9700;
   text-transform: uppercase;
   padding: 15px 20px 11px;
   font-size: 14px;
